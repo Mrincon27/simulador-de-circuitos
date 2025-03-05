@@ -132,39 +132,108 @@ Para el desarrollo de la lógica del simulador, hay que tener en cuenta los fact
 Las fórmulas utilizadas en las simulaciones de los circuitos son las siguientes:
 
 1. **Circuito RC (Serie):**
-   - Voltaje en la resistencia: \( V_R(t) = V_0 \cdot e^{-\frac{t}{RC}} \)
-   - Voltaje en el capacitor: \( V_C(t) = V_0 \cdot (1 - e^{-\frac{t}{RC}}) \)
-   - Corriente en el circuito: \( I(t) = \frac{V_R(t)}{R} \)
+   - Voltaje en la resistencia:
+
+     ![image](https://github.com/user-attachments/assets/ac0674c0-bcfa-471a-84ef-231c26db9c0d)
+
+   - Voltaje en el capacitor:
+
+     ![image](https://github.com/user-attachments/assets/fb67130d-eda4-4794-abb8-6480e19c7d92)
+     
+   - Corriente en el circuito:
+
+     ![image](https://github.com/user-attachments/assets/9e9060cd-4be8-473f-b6b4-2eca4c2fb3db)
+
 
 2. **Circuito RL (Serie):**
-   - Corriente en el circuito: \( I(t) = \frac{V_0}{R} \cdot (1 - e^{-\frac{t}{\tau}}) \), donde \( \tau = \frac{L}{R} \)
-   - Voltaje en la resistencia: \( V_R(t) = R \cdot I(t) \)
-   - Voltaje en el inductor: \( V_L(t) = V_0 \cdot e^{-\frac{t}{\tau}} \)
+   - Corriente en el circuito:
+
+     ![image](https://github.com/user-attachments/assets/8b3b6c57-f114-40be-b78f-e9e320d545e6)
+
+   - Voltaje en la resistencia:
+
+     ![image](https://github.com/user-attachments/assets/cb481f2d-dab2-4dc6-a610-b2f05414d172)
+
+   - Voltaje en el inductor:
+
+     ![image](https://github.com/user-attachments/assets/42396330-c581-4f08-aef8-7ee7e09385a2)
+
 
 3. **Circuito RLC (Serie):**
-   - Corriente en el circuito: \( I(t) = \frac{V_0}{R} \cdot (1 - e^{-\frac{t}{\tau}}) \), donde \( \tau = \frac{L}{R} \)
-   - Voltaje en la resistencia: \( V_R(t) = R \cdot I(t) \)
-   - Voltaje en el inductor: \( V_L(t) = L \cdot \frac{dI(t)}{dt} \)
-   - Voltaje en el capacitor: \( V_C(t) = V_0 \cdot (1 - e^{-\frac{t}{RC}}) \)
+   - Corriente en el circuito:
+
+     ![image](https://github.com/user-attachments/assets/ae1be8fe-6aa8-4456-9ac2-3bcd1f57d33b)
+
+   - Voltaje en la resistencia:
+
+     ![image](https://github.com/user-attachments/assets/cbd138f7-9775-4d6a-bf58-45ee52671e89)
+
+   - Voltaje en el inductor:
+
+     ![image](https://github.com/user-attachments/assets/472076b9-3688-45e1-b9aa-7d2fae09518f)
+
+   - Voltaje en el capacitor:
+   
+     ![image](https://github.com/user-attachments/assets/cb0cd2ad-4d75-4425-aad1-7d554599f809)
+
 
 4. **Circuito RC (Paralelo):**
-   - Voltaje en el circuito: \( V(t) = V_0 \)
-   - Corriente en la resistencia: \( I_R(t) = \frac{V_0}{R} \)
-   - Corriente en el capacitor: \( I_C(t) = C \cdot \frac{dV(t)}{dt} \)
-   - Corriente total: \( I_{total}(t) = I_R(t) + I_C(t) \)
+   - Voltaje en el circuito:
+
+     ![image](https://github.com/user-attachments/assets/302c7ba9-6fb2-419c-bb13-70e5bcb2c130)
+
+   - Corriente en la resistencia:
+
+     ![image](https://github.com/user-attachments/assets/87788625-1f0a-4488-ab15-b17ecad02cb4)
+
+   - Corriente en el capacitor:
+
+     ![image](https://github.com/user-attachments/assets/9220f2ae-0b37-4235-b74b-6044b795c326)
+
+   - Corriente total:
+  
+     ![image](https://github.com/user-attachments/assets/84704f58-99ed-4138-aa9a-1849b5698120)
+
 
 5. **Circuito RL (Paralelo):**
-   - Voltaje en el circuito: \( V(t) = V_0 \)
-   - Corriente en la resistencia: \( I_R(t) = \frac{V_0}{R} \)
-   - Corriente en el inductor: \( I_L(t) = \frac{1}{L} \int V(t) \, dt \)
-   - Corriente total: \( I_{total}(t) = I_R(t) + I_L(t) \)
+   - Voltaje en el circuito:
+
+     ![image](https://github.com/user-attachments/assets/44236adb-be49-44fd-9de1-1ecfab2fefe4)
+
+   - Corriente en la resistencia:
+  
+     ![image](https://github.com/user-attachments/assets/fbe1e169-c9c3-4cea-8815-1a890b36a9da)
+
+   - Corriente en el inductor:
+
+     ![image](https://github.com/user-attachments/assets/63bfe76a-1e2b-4c0a-9876-30daf67bcd88)
+
+   - Corriente total:
+
+     ![image](https://github.com/user-attachments/assets/6579e61d-80b7-4ad9-8bfc-153e66b3e43f)
+
 
 6. **Circuito RLC (Paralelo):**
-   - Voltaje en el circuito: \( V(t) = V_0 \)
-   - Corriente en la resistencia: \( I_R(t) = \frac{V_0}{R} \)
-   - Corriente en el inductor: \( I_L(t) = \frac{1}{L} \int V(t) \, dt \)
-   - Corriente en el capacitor: \( I_C(t) = C \cdot \frac{dV(t)}{dt} \)
-   - Corriente total: \( I_{total}(t) = I_R(t) + I_L(t) + I_C(t) \)
+   - Voltaje en el circuito:
+
+    ![image](https://github.com/user-attachments/assets/9fc1721a-2c05-4d03-a062-5820e6cbc218)
+
+   - Corriente en la resistencia:
+
+     ![image](https://github.com/user-attachments/assets/7cd70d12-b437-4efb-b715-e80b27c4ec0b)
+
+   - Corriente en el inductor:
+
+     ![image](https://github.com/user-attachments/assets/b9939b67-283a-4322-a560-1c79fe0acefa)
+
+   - Corriente en el capacitor:
+
+     ![image](https://github.com/user-attachments/assets/57d0372a-7f25-4a5a-b4ca-e3374b328d85)
+
+   - Corriente total:
+
+     ![image](https://github.com/user-attachments/assets/381f2157-1142-42ad-8649-ed1cc3d6127e)
+
 
 ---
 
@@ -213,3 +282,100 @@ Un apoyo para la realización de este proyecto es una calculadora desarrollada e
 ---
 
 Este proyecto combina conceptos de programación orientada a objetos, matemáticas aplicadas y diseño de interfaces gráficas para proporcionar una herramienta útil y educativa para la simulación de circuitos eléctricos simples.
+
+
+```mermaid
+classDiagram
+direction TB
+
+    class Circuito {
+        +fuente: FuenteDC
+        +resistencias: list
+        +calcularCorriente() : float
+        +calcularVoltaje() : float
+        +mostrarDatos()
+        +mostrarGraficas()
+    }
+
+    class CircuitoSerie {
+        +calcular_resistencia_eq()
+    }
+
+    class CircuitoParalelo {
+        +calcular_resistencia_eq()
+    }
+
+    class CircuitoRC {
+        +capacitores: list
+        +calcularCarga() : float
+        +calcularTiempoCarga() : float
+        +mostrarDatos()
+        +mostrarGraficas()
+    }
+
+    class CircuitoRL {
+        +inductores: list
+        +calcularCorrienteInducida() : float
+        +calcularTiempoRespuesta() : float
+        +mostrarDatos()
+        +mostrarGraficas()
+    }
+
+    class CircuitoRLC {
+        +capacitores: list
+        +inductores: list
+        +calcularFrecuenciaResonancia() : float
+        +mostrarDatos()
+        +mostrarGraficas()
+    }
+
+    class Componente {
+        +valor: float
+        +unidad: String
+        +obtener_valor() : float
+    }
+
+    class Resistencia {
+        +valor: float
+        +obtener_valor()
+    }
+
+    class Capacitor {
+        +valor: float
+        +obtener_valor()
+    }
+
+    class Bobina {
+        +valor: float
+        +obtener_valor()
+    }
+
+    class FuenteDC {
+        +voltaje: float
+        +obtener_valor()
+    }
+
+    %% Herencia de Circuito
+    Circuito <|-- CircuitoSerie
+    Circuito <|-- CircuitoParalelo
+    CircuitoRC --|> Circuito
+    CircuitoRL --|> Circuito
+    CircuitoRLC --|> Circuito
+
+    %% Relación de Circuitos específicos con sus componentes
+    CircuitoRC --> Capacitor
+    CircuitoRL --> Bobina
+    CircuitoRLC --> Capacitor
+    CircuitoRLC --> Bobina
+
+    %% Relación de Circuito con sus componentes
+    Circuito --> FuenteDC
+    Circuito --> Resistencia
+
+    %% Herencia de Componente
+    Componente <|-- Resistencia
+    Componente <|-- Capacitor
+    Componente <|-- Bobina
+    Componente <|-- FuenteDC
+```
+
